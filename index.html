@@ -1,680 +1,337 @@
 <!DOCTYPE html>
-<html lang="zh-TW" class="scroll-smooth">
+<html lang="zh-TW" class="scroll-smooth dark">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>陳建安 Kevin Chen | 數位影音行銷企劃 & 影視創作者 求職作品集</title>
-  
-  <!-- Tailwind CSS CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  
-  <!-- FontAwesome 圖示 -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  
-  <!-- Google Fonts 質感字體 -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Noto+Sans+TC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
-
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: {
-            sans: ['"Plus Jakarta Sans"', '"Noto Sans TC"', 'sans-serif'],
-          },
-          colors: {
-            brand: {
-              gold: '#F59E0B',      /* 琥珀金點綴色 */
-              goldHover: '#D97706',
-              darkBg: '#0F172A',    /* Slate-900 暗底色 */
-              cardBg: '#1E293B',    /* Slate-800 卡片色 */
-              border: '#334155',    /* Slate-700 邊框色 */
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>影音行銷與視覺創作者 | 個人作品集</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#fdf4f5',
+                            100: '#fbe8eb',
+                            500: '#e11d48',
+                            600: '#be123c',
+                            700: '#9f1239',
+                        }
+                    }
+                }
             }
-          }
         }
-      }
-    }
-  </script>
-
-  <style>
-    /* 琥珀金漸層文字 */
-    .text-gradient-gold {
-      background: linear-gradient(135deg, #FBBF24 0%, #F59E0B 50%, #D97706 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-    
-    /* 導覽列毛玻璃效果 */
-    .glass-navbar {
-      background: rgba(15, 23, 42, 0.85);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-    }
-    
-    /* 16:9 比例容器（YouTube 專用） */
-    .aspect-video-container {
-      position: relative;
-      padding-bottom: 56.25%;
-      height: 0;
-      overflow: hidden;
-    }
-    .aspect-video-container iframe {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      border: 0;
-    }
-
-    /* 科技網格背景 */
-    .bg-cyber-grid {
-      background-size: 50px 50px;
-      background-image: 
-        linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-        linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
-      mask-image: radial-gradient(circle at 50% 50%, black 40%, transparent 85%);
-      -webkit-mask-image: radial-gradient(circle at 50% 50%, black 40%, transparent 85%);
-    }
-
-    /* 極光動態光斑動畫 */
-    @keyframes pulse-glow-1 {
-      0%, 100% { transform: translate(0px, 0px) scale(1); opacity: 0.35; }
-      50% { transform: translate(60px, -40px) scale(1.15); opacity: 0.55; }
-    }
-    @keyframes pulse-glow-2 {
-      0%, 100% { transform: translate(0px, 0px) scale(1); opacity: 0.25; }
-      50% { transform: translate(-50px, 50px) scale(1.2); opacity: 0.45; }
-    }
-    .animate-aurora-1 {
-      animation: pulse-glow-1 12s ease-in-out infinite;
-    }
-    .animate-aurora-2 {
-      animation: pulse-glow-2 15s ease-in-out infinite;
-    }
-  </style>
+    </script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-<body class="bg-brand-darkBg text-slate-200 font-sans antialiased selection:bg-brand-gold selection:text-black">
+<body class="bg-slate-950 text-slate-100 font-sans antialiased transition-colors duration-300">
 
-  <!-- ================= 1. 導覽列 (Navbar) ================= -->
-  <nav class="fixed top-0 left-0 w-full z-50 glass-navbar border-b border-brand-border/60 transition-all duration-300">
-    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-      <a href="#" class="flex items-center gap-2 group">
-        <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-amber-400 to-amber-600 flex items-center justify-center text-black font-extrabold text-xl shadow-lg shadow-amber-500/20 group-hover:scale-105 transition-transform duration-300">
-          K
-        </div>
-        <span class="text-xl font-bold tracking-wider text-white">KEVIN<span class="text-brand-gold">.CREATIVE</span></span>
-      </a>
-
-      <div class="hidden md:flex items-center gap-8 font-medium text-sm text-slate-300">
-        <a href="#about" class="hover:text-brand-gold transition-colors duration-200">關於我</a>
-        <a href="#skills" class="hover:text-brand-gold transition-colors duration-200">實戰職能</a>
-        <a href="#video-showcase" class="hover:text-brand-gold transition-colors duration-200">影音代表作</a>
-        <a href="#photo-showcase" class="hover:text-brand-gold transition-colors duration-200">商攝作品</a>
-        <a href="resume.pdf" download class="px-4 py-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-white font-medium border border-brand-border flex items-center gap-2 transition-all">
-          <i class="fa-solid fa-file-arrow-down text-brand-gold"></i>
-          <span>下載履歷</span>
-        </a>
-        <a href="#contact" class="px-5 py-2 rounded-full bg-brand-gold hover:bg-brand-goldHover text-black font-bold transition-all duration-300 shadow-md shadow-amber-500/20">
-          面試邀約
-        </a>
-      </div>
-
-      <button id="menu-btn" class="md:hidden text-2xl text-slate-300 hover:text-white focus:outline-none" aria-label="切換選單">
-        <i class="fa-solid fa-bars"></i>
-      </button>
-    </div>
-
-    <div id="mobile-menu" class="hidden md:hidden bg-brand-darkBg/95 border-b border-brand-border px-6 py-6 space-y-4">
-      <a href="#about" class="block text-slate-300 hover:text-brand-gold mobile-link">關於我</a>
-      <a href="#skills" class="block text-slate-300 hover:text-brand-gold mobile-link">實戰職能</a>
-      <a href="#video-showcase" class="block text-slate-300 hover:text-brand-gold mobile-link">影音代表作</a>
-      <a href="#photo-showcase" class="block text-slate-300 hover:text-brand-gold mobile-link">商攝作品</a>
-      <a href="resume.pdf" download class="block w-full text-center py-2.5 rounded-lg bg-slate-800 text-white font-medium border border-brand-border mobile-link">下載完整履歷 (PDF)</a>
-      <a href="#contact" class="block w-full text-center py-3 rounded-lg bg-brand-gold text-black font-semibold mobile-link">聯絡 / 面試邀約</a>
-    </div>
-  </nav>
-
-  <!-- ================= 2. 首頁橫幅 (Hero Section - 炫麗科技背景) ================= -->
-  <section id="about" class="relative pt-32 pb-16 md:pt-44 md:pb-24 overflow-hidden flex items-center min-h-[92vh]">
-    
-    <!-- 炫麗背景層 1：科技網格 -->
-    <div class="absolute inset-0 bg-cyber-grid pointer-events-none z-0"></div>
-
-    <!-- 炫麗背景層 2：極光動態光斑 (Aurora Glow Orbs) -->
-    <div class="absolute top-1/4 left-1/3 -translate-x-1/2 -translate-y-1/2 w-[550px] h-[550px] bg-gradient-to-tr from-amber-500/25 to-yellow-300/10 rounded-full blur-[140px] pointer-events-none animate-aurora-1 z-0"></div>
-    <div class="absolute bottom-1/4 right-1/4 w-[480px] h-[480px] bg-gradient-to-bl from-indigo-600/25 to-blue-400/10 rounded-full blur-[130px] pointer-events-none animate-aurora-2 z-0"></div>
-
-    <!-- 炫麗背景層 3：互動式微光粒子 Canvas -->
-    <canvas id="hero-particle-canvas" class="absolute inset-0 w-full h-full pointer-events-auto z-0"></canvas>
-
-    <!-- 前景主內容容器 (z-10 確保不被背景覆蓋) -->
-    <div class="max-w-5xl mx-auto px-6 text-center relative z-10 pointer-events-none">
-      
-      <!-- 求職狀態與求職意願徽章 -->
-      <div class="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-slate-800/80 border border-brand-border text-xs font-semibold tracking-wider text-slate-300 mb-8 backdrop-blur-md pointer-events-auto shadow-md">
-        <span class="flex h-2.5 w-2.5 relative">
-          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-          <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
-        </span>
-        <span>尋求新職缺：影音行銷企劃 / 影視剪輯師 / 調色師</span>
-      </div>
-
-      <h1 class="text-4xl sm:text-6xl md:text-7xl font-black text-white tracking-tight leading-[1.15] mb-6 pointer-events-auto drop-shadow-sm">
-        兼具廣播級剪輯效率與<br class="hidden sm:inline">
-        電影調色的 <span class="text-gradient-gold">影音企劃創作者</span>
-      </h1>
-
-      <p class="max-w-3xl mx-auto text-base sm:text-lg md:text-xl text-slate-300 font-light leading-relaxed mb-10 pointer-events-auto">
-        您好，我是 <strong class="text-white font-semibold">陳建安 Kevin Chen</strong>。結合理論與大量實戰，具備 <strong class="text-amber-400">EDIUS 電視台高效率即時多軌剪輯</strong> 與 <strong class="text-amber-400">DaVinci Resolve 電影級色彩科學調色</strong> 雙修優勢，能從「受眾行銷洞察、腳本企劃、專業棚拍攝影到後期成片」獨立交付，協助企業快速打造高轉換的品牌內容。
-      </p>
-
-      <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16 pointer-events-auto">
-        <a href="#video-showcase" class="w-full sm:w-auto px-8 py-4 rounded-full bg-brand-gold hover:bg-brand-goldHover text-black font-bold flex items-center justify-center gap-3 shadow-lg shadow-amber-500/25 transition-all duration-300 hover:scale-[1.03]">
-          <i class="fa-solid fa-play text-sm"></i>
-          <span>觀看精選實戰代表作</span>
-        </a>
-        <a href="mailto:kevin.chen@example.com?subject=【面試邀約】影音行銷企劃職缺洽談" class="w-full sm:w-auto px-8 py-4 rounded-full bg-slate-800/90 hover:bg-slate-700 text-white font-semibold border border-brand-border flex items-center justify-center gap-2 transition-all duration-300 hover:scale-[1.03] backdrop-blur-md">
-          <i class="fa-regular fa-envelope text-brand-gold"></i>
-          <span>發送面試邀約</span>
-        </a>
-      </div>
-
-      <!-- 實績看板 -->
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto pt-8 border-t border-brand-border/50 pointer-events-auto backdrop-blur-sm">
-        <div class="p-4 rounded-xl bg-slate-900/60 border border-brand-border/40 hover:border-amber-500/30 transition-colors">
-          <div class="text-3xl font-extrabold text-white mb-1">50+</div>
-          <div class="text-xs text-slate-400">商攝與影音成片經驗</div>
-        </div>
-        <div class="p-4 rounded-xl bg-slate-900/60 border border-brand-border/40 hover:border-amber-500/30 transition-colors">
-          <div class="text-3xl font-extrabold text-brand-gold mb-1">2X</div>
-          <div class="text-xs text-slate-400">EDIUS 多軌即時剪輯交付效率</div>
-        </div>
-        <div class="p-4 rounded-xl bg-slate-900/60 border border-brand-border/40 hover:border-amber-500/30 transition-colors">
-          <div class="text-3xl font-extrabold text-white mb-1">4K/ProRes</div>
-          <div class="text-xs text-slate-400">標準廣播級後期工作流程</div>
-        </div>
-        <div class="p-4 rounded-xl bg-slate-900/60 border border-brand-border/40 hover:border-amber-500/30 transition-colors">
-          <div class="text-3xl font-extrabold text-brand-gold mb-1">100%</div>
-          <div class="text-xs text-slate-400">前期企劃到後期獨立執行力</div>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ================= 3. 核心專業技能專區 (Core Competencies) ================= -->
-  <section id="skills" class="py-24 border-t border-brand-border/40 bg-slate-900/50">
-    <div class="max-w-7xl mx-auto px-6">
-      <div class="text-center max-w-2xl mx-auto mb-16">
-        <span class="text-xs font-bold uppercase tracking-widest text-brand-gold">CORE VALUE & CAPABILITIES</span>
-        <h2 class="text-3xl md:text-4xl font-bold text-white mt-2">能為企業帶來實質產出的核心職能</h2>
-        <p class="text-slate-400 text-sm mt-3">跳脫單純的軟體操作，聚焦於商業成效與專業產能極大化。</p>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        
-        <!-- 技能卡片 1 -->
-        <div class="bg-brand-cardBg border border-brand-border/60 p-8 rounded-2xl hover:border-amber-500/40 transition-all duration-300 flex flex-col justify-between">
-          <div>
-            <div class="w-14 h-14 rounded-xl bg-amber-500/10 flex items-center justify-center text-brand-gold text-2xl mb-6">
-              <i class="fa-solid fa-wand-magic-sparkles"></i>
+    <!-- Navbar -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-slate-950/80 backdrop-blur-md border-b border-slate-800">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <a href="#" class="text-xl font-bold tracking-wider text-white flex items-center gap-2">
+                <span class="w-3 h-3 rounded-full bg-rose-600 animate-pulse"></span>
+                PORTFOLIO
+            </a>
+            <nav class="hidden md:flex items-center space-x-8 text-sm font-medium">
+                <a href="#about" class="hover:text-rose-500 transition-colors">關於我</a>
+                <a href="#videos" class="hover:text-rose-500 transition-colors">影音作品</a>
+                <a href="#gallery" class="hover:text-rose-500 transition-colors">攝影與平面</a>
+                <a href="#contact" class="hover:text-rose-500 transition-colors">聯繫方式</a>
+            </nav>
+            <div class="flex items-center gap-4">
+                <a href="#contact" class="hidden sm:inline-block px-4 py-2 text-sm font-medium bg-rose-600 hover:bg-rose-700 text-white rounded-full transition-all shadow-lg shadow-rose-600/20">
+                    與我聯繫
+                </a>
             </div>
-            <h3 class="text-xl font-bold text-white mb-3">1. 商業影像編輯 & 電商視覺</h3>
-            <p class="text-slate-400 text-sm leading-relaxed mb-6">
-              精通 <span class="text-slate-200 font-semibold">Photoshop、Illustrator</span>。專注於高階人像膚質精修、電商產品去背合成及情境主圖打造。熟知電商點擊率痛點，能透過精準的構圖與色彩平衡，提升消費者停留時間與轉換意願。
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center justify-center pt-20 pb-16 overflow-hidden">
+        <!-- Background Glow -->
+        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-rose-600/15 rounded-full blur-3xl pointer-events-none"></div>
+        
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+            <div class="mb-6 flex justify-center">
+                <div class="relative w-40 h-40 sm:w-48 sm:h-48 rounded-full p-1 bg-gradient-to-tr from-rose-600 to-amber-500 shadow-2xl">
+                    <img src="images/me.jpg" alt="個人形象照" class="w-full h-full object-cover rounded-full">
+                </div>
+            </div>
+            <span class="inline-block px-3 py-1 text-xs font-semibold tracking-wider text-rose-400 uppercase bg-rose-950/50 border border-rose-800/50 rounded-full mb-4">
+                影音行銷與視覺創作者
+            </span>
+            <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight text-white mb-6">
+                用鏡頭說故事，<br class="hidden sm:inline">用數據驅動影響力。
+            </h1>
+            <p class="max-w-2xl mx-auto text-lg sm:text-xl text-slate-400 mb-10">
+                我是影音行銷班結訓學員，專精於影片剪輯、企劃腳本撰寫、社群短影音運營與商業攝影，致力於創造兼具美感與轉化率的視覺內容。
             </p>
-          </div>
-          <div>
-            <div class="text-xs font-semibold text-slate-300 mb-2">掌握技能標籤：</div>
-            <div class="flex flex-wrap gap-2">
-              <span class="text-xs px-2.5 py-1 rounded bg-slate-900 text-slate-300 border border-slate-700">商用人像精修</span>
-              <span class="text-xs px-2.5 py-1 rounded bg-slate-900 text-slate-300 border border-slate-700">去背光影合成</span>
-              <span class="text-xs px-2.5 py-1 rounded bg-slate-900 text-slate-300 border border-slate-700">廣告 Banner 設計</span>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#videos" class="px-8 py-3.5 rounded-full bg-rose-600 hover:bg-rose-700 text-white font-semibold transition-all shadow-lg shadow-rose-600/30 flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-play"></i> 觀看影音作品
+                </a>
+                <a href="#contact" class="px-8 py-3.5 rounded-full bg-slate-900 hover:bg-slate-800 text-slate-200 border border-slate-700 font-semibold transition-all flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-envelope"></i> 聯繫我
+                </a>
             </div>
-          </div>
         </div>
+    </section>
 
-        <!-- 技能卡片 2 -->
-        <div class="bg-brand-cardBg border border-brand-border/60 p-8 rounded-2xl hover:border-amber-500/40 transition-all duration-300 flex flex-col justify-between">
-          <div>
-            <div class="w-14 h-14 rounded-xl bg-amber-500/10 flex items-center justify-center text-brand-gold text-2xl mb-6">
-              <i class="fa-solid fa-camera-retro"></i>
+    <!-- About Me Section -->
+    <section id="about" class="py-24 bg-slate-900/50 border-t border-slate-900">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold tracking-tight text-white sm:text-4xl mb-4">關於我</h2>
+                <div class="w-16 h-1 bg-rose-600 mx-auto rounded-full"></div>
             </div>
-            <h3 class="text-xl font-bold text-white mb-3">2. 商業棚拍攝影 & 控光實務</h3>
-            <p class="text-slate-400 text-sm leading-relaxed mb-6">
-              具備專業棚燈控光思維，熟練三點布光（主光、輔光、輪廓光）與反光板、柔光箱搭配，並使用專業測光錶精準掌控光比。擅長金屬與透明器皿的高反差反光壓制，以及企業主管、職人形象照拍攝。
-            </p>
-          </div>
-          <div>
-            <div class="text-xs font-semibold text-slate-300 mb-2">掌握技能標籤：</div>
-            <div class="flex flex-wrap gap-2">
-              <span class="text-xs px-2.5 py-1 rounded bg-slate-900 text-slate-300 border border-slate-700">棚燈三點布光</span>
-              <span class="text-xs px-2.5 py-1 rounded bg-slate-900 text-slate-300 border border-slate-700">測光錶精確控光</span>
-              <span class="text-xs px-2.5 py-1 rounded bg-slate-900 text-slate-300 border border-slate-700">靜態商品微距</span>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-5">
+                    <div class="relative rounded-2xl overflow-hidden border border-slate-800 shadow-2xl bg-slate-900 p-2">
+                        <img src="images/me.jpg" alt="關於我照片" class="rounded-xl w-full h-auto object-cover grayscale hover:grayscale-0 transition-all duration-500">
+                    </div>
+                </div>
+                <div class="lg:col-span-7 space-y-6">
+                    <h3 class="text-2xl font-semibold text-white">結合影像美學與商業思維的行銷新鮮人</h3>
+                    <p class="text-slate-300 leading-relaxed">
+                        具備扎實的影音行銷訓練背景，熟悉從前期企劃發想、腳本撰寫、現場拍攝、後期剪輯（Premiere / Final Cut Pro）到社群數據覆盤的完整流程。深信優秀的影片不只要吸引目光，更能精準傳遞品牌價值並創造轉換。
+                    </p>
+                    
+                    <div>
+                        <h4 class="text-sm font-semibold tracking-wider text-rose-400 uppercase mb-3">核心技能</h4>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 text-xs font-medium bg-slate-800 text-slate-300 rounded-lg border border-slate-700">影音剪輯 (Premiere / FCP)</span>
+                            <span class="px-3 py-1 text-xs font-medium bg-slate-800 text-slate-300 rounded-lg border border-slate-700">企劃腳本撰寫</span>
+                            <span class="px-3 py-1 text-xs font-medium bg-slate-800 text-slate-300 rounded-lg border border-slate-700">社群影音運營</span>
+                            <span class="px-3 py-1 text-xs font-medium bg-slate-800 text-slate-300 rounded-lg border border-slate-700">商業攝影與後製</span>
+                            <span class="px-3 py-1 text-xs font-medium bg-slate-800 text-slate-300 rounded-lg border border-slate-700">行銷文案撰寫</span>
+                            <span class="px-3 py-1 text-xs font-medium bg-slate-800 text-slate-300 rounded-lg border border-slate-700">Data Analytics 數據分析</span>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
+    </section>
 
-        <!-- 技能卡片 3 -->
-        <div class="bg-brand-cardBg border border-brand-border/60 p-8 rounded-2xl hover:border-amber-500/40 transition-all duration-300 flex flex-col justify-between">
-          <div>
-            <div class="w-14 h-14 rounded-xl bg-amber-500/10 flex items-center justify-center text-brand-gold text-2xl mb-6">
-              <i class="fa-solid fa-clapperboard"></i>
+    <!-- Video Projects Section -->
+    <section id="videos" class="py-24">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold tracking-tight text-white sm:text-4xl mb-4">影音作品集</h2>
+                <div class="w-16 h-1 bg-rose-600 mx-auto rounded-full"></div>
+                <p class="mt-4 text-slate-400">精選 YouTube 實戰影音專案與行銷成效展示</p>
             </div>
-            <h3 class="text-xl font-bold text-white mb-3">3. 影視剪輯後製 & 電影調色</h3>
-            <p class="text-slate-400 text-sm leading-relaxed mb-6">
-              具備罕見的 <span class="text-brand-gold font-semibold">EDIUS + DaVinci Resolve</span> 雙核心能力。EDIUS 提供電視台新聞級的高速多軌即時剪輯，專門應對緊急行銷短片需求；DaVinci Resolve 則運用節點調色建立品牌專屬 LUT 與影視級色調，兼具高產出速度與高視覺質感。
-            </p>
-          </div>
-          <div>
-            <div class="text-xs font-semibold text-slate-300 mb-2">掌握技能標籤：</div>
-            <div class="flex flex-wrap gap-2">
-              <span class="text-xs px-2.5 py-1 rounded bg-slate-900 text-slate-300 border border-slate-700">EDIUS 廣播級剪輯</span>
-              <span class="text-xs px-2.5 py-1 rounded bg-slate-900 text-slate-300 border border-slate-700">DaVinci 節點調色</span>
-              <span class="text-xs px-2.5 py-1 rounded bg-slate-900 text-slate-300 border border-slate-700">音樂節奏卡點</span>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Video Item 1 -->
+                <div class="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden shadow-xl flex flex-col">
+                    <div class="relative w-full aspect-video bg-black">
+                        <iframe class="absolute top-0 left-0 w-full h-full" src="https://www.youtube.com/embed/78j5Mc5z-Rs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center justify-between mb-3">
+                                <span class="text-xs font-semibold px-2.5 py-1 bg-rose-950 text-rose-400 rounded-full border border-rose-800/50">品牌宣傳短片</span>
+                                <span class="text-xs text-slate-400">專案企劃與剪輯</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-white mb-2">品牌形象與核心故事影片</h3>
+                            <p class="text-sm text-slate-400 mb-4">透過流暢的節奏與情感渲染，提升品牌辨識度並有效傳遞核心理念。</p>
+                        </div>
+                        <div class="border-t border-slate-800 pt-4 mt-2">
+                            <div class="flex justify-between items-center text-xs text-slate-300 bg-slate-950/60 p-3 rounded-xl border border-slate-800/80">
+                                <div><strong class="text-rose-400">曝光數：</strong> 50K+ Views</div>
+                                <div><strong class="text-rose-400">互動率：</strong> 8.5%</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Video Item 2 -->
+                <div class="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden shadow-xl flex flex-col">
+                    <div class="relative w-full aspect-video bg-black">
+                        <iframe class="absolute top-0 left-0 w-full h-full" src="https://www.youtube.com/embed/TE9QP2C0oW0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center justify-between mb-3">
+                                <span class="text-xs font-semibold px-2.5 py-1 bg-rose-950 text-rose-400 rounded-full border border-rose-800/50">社群短影音</span>
+                                <span class="text-xs text-slate-400">腳本 / 拍攝 / 後製</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-white mb-2">社群導購與產品開箱實測</h3>
+                            <p class="text-sm text-slate-400 mb-4">掌握短影音黃金前三秒吸睛法則，精準對焦目標受眾並引導導購轉換。</p>
+                        </div>
+                        <div class="border-t border-slate-800 pt-4 mt-2">
+                            <div class="flex justify-between items-center text-xs text-slate-300 bg-slate-950/60 p-3 rounded-xl border border-slate-800/80">
+                                <div><strong class="text-rose-400">觸及人數：</strong> 120K+</div>
+                                <div><strong class="text-rose-400">點擊轉換：</strong> 4.2% CTR</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
+    </section>
 
-      </div>
+    <!-- Photography & Graphic Gallery Section -->
+    <section id="gallery" class="py-24 bg-slate-900/50 border-t border-slate-900">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold tracking-tight text-white sm:text-4xl mb-4">攝影與平面作品</h2>
+                <div class="w-16 h-1 bg-rose-600 mx-auto rounded-full"></div>
+                <p class="mt-4 text-slate-400">點擊圖片可放大檢視，感受光影與構圖細節</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Photo 1 -->
+                <div onclick="openModal('images/photo-01.jpg', '時尚人像光影打光', '雙色溫控光與人物造型攝影，營造高級時尚雜誌氛圍。')" class="group relative bg-slate-900 rounded-xl overflow-hidden border border-slate-800 cursor-pointer shadow-lg">
+                    <div class="aspect-[3/4] overflow-hidden">
+                        <img src="images/photo-01.jpg" alt="時尚人像" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-4">
+                        <span class="text-xs text-rose-400 font-semibold">人像攝影</span>
+                        <h4 class="text-white font-bold text-base">時尚人像光影打光</h4>
+                    </div>
+                </div>
+
+                <!-- Photo 2 -->
+                <div onclick="openModal('images/photo-02.jpg', '人像寫真棚拍', '展現細緻膚質質感與復古背景打光設計，捕捉自然眼神光。')" class="group relative bg-slate-900 rounded-xl overflow-hidden border border-slate-800 cursor-pointer shadow-lg">
+                    <div class="aspect-[3/4] overflow-hidden">
+                        <img src="images/photo-02.jpg" alt="人像寫真棚拍" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-4">
+                        <span class="text-xs text-rose-400 font-semibold">棚拍攝影</span>
+                        <h4 class="text-white font-bold text-base">人像寫真棚拍</h4>
+                    </div>
+                </div>
+
+                <!-- Photo 3 -->
+                <div onclick="openModal('images/photo-03.jpg', '商業精品手錶微距', '呈現金屬材質反射光澤與極致微距細節，突顯產品質感。')" class="group relative bg-slate-900 rounded-xl overflow-hidden border border-slate-800 cursor-pointer shadow-lg">
+                    <div class="aspect-[3/4] overflow-hidden">
+                        <img src="images/photo-03.jpg" alt="商業精品手錶微距" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-4">
+                        <span class="text-xs text-rose-400 font-semibold">商品攝影</span>
+                        <h4 class="text-white font-bold text-base">商業精品手錶微距</h4>
+                    </div>
+                </div>
+
+                <!-- Photo 4 -->
+                <div onclick="openModal('images/photo-04.jpg', '香水精品商業攝影', '展示倒影板應用與鮮艷花卉搭景，形塑奢華品牌調性。')" class="group relative bg-slate-900 rounded-xl overflow-hidden border border-slate-800 cursor-pointer shadow-lg">
+                    <div class="aspect-[3/4] overflow-hidden">
+                        <img src="images/photo-04.jpg" alt="香水精品商業攝影" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-4">
+                        <span class="text-xs text-rose-400 font-semibold">商業攝影</span>
+                        <h4 class="text-white font-bold text-base">香水精品商業攝影</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-24 border-t border-slate-900">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl font-bold tracking-tight text-white sm:text-4xl mb-4">與我聯繫</h2>
+            <div class="w-16 h-1 bg-rose-600 mx-auto rounded-full"></div>
+            <p class="mt-4 text-slate-400 mb-12">正在尋求 影音企劃 / 影片剪輯師 / 數位行銷 等相關工作機會，歡迎隨時與我聯絡！</p>
+
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-12">
+                <a href="mailto:your.email@example.com" class="p-6 bg-slate-900 border border-slate-800 rounded-2xl hover:border-rose-600/50 transition-all flex flex-col items-center">
+                    <div class="w-12 h-12 rounded-full bg-rose-950 text-rose-500 flex items-center justify-center text-xl mb-4">
+                        <i class="fa-solid fa-envelope"></i>
+                    </div>
+                    <h3 class="text-white font-semibold mb-1">電子郵件</h3>
+                    <span class="text-sm text-slate-400">your.email@example.com</span>
+                </a>
+
+                <a href="tel:+886912345678" class="p-6 bg-slate-900 border border-slate-800 rounded-2xl hover:border-rose-600/50 transition-all flex flex-col items-center">
+                    <div class="w-12 h-12 rounded-full bg-rose-950 text-rose-500 flex items-center justify-center text-xl mb-4">
+                        <i class="fa-solid fa-phone"></i>
+                    </div>
+                    <h3 class="text-white font-semibold mb-1">聯絡電話</h3>
+                    <span class="text-sm text-slate-400">+886 912-345-678</span>
+                </a>
+
+                <a href="https://linkedin.com" target="_blank" class="p-6 bg-slate-900 border border-slate-800 rounded-2xl hover:border-rose-600/50 transition-all flex flex-col items-center">
+                    <div class="w-12 h-12 rounded-full bg-rose-950 text-rose-500 flex items-center justify-center text-xl mb-4">
+                        <i class="fa-brands fa-linkedin-in"></i>
+                    </div>
+                    <h3 class="text-white font-semibold mb-1">LinkedIn</h3>
+                    <span class="text-sm text-slate-400">查看專業履歷</span>
+                </a>
+            </div>
+
+            <!-- Social Links -->
+            <div class="flex justify-center space-x-6">
+                <a href="https://youtube.com" target="_blank" class="w-10 h-10 rounded-full bg-slate-900 border border-slate-800 text-slate-300 hover:text-white hover:bg-rose-600 flex items-center justify-center transition-all">
+                    <i class="fa-brands fa-youtube"></i>
+                </a>
+                <a href="https://github.com" target="_blank" class="w-10 h-10 rounded-full bg-slate-900 border border-slate-800 text-slate-300 hover:text-white hover:bg-rose-600 flex items-center justify-center transition-all">
+                    <i class="fa-brands fa-github"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-8 bg-slate-950 border-t border-slate-900 text-center text-xs text-slate-500">
+        <p>&copy; 2026 Video Marketing Portfolio. All Rights Reserved.</p>
+    </footer>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="fixed inset-0 z-50 bg-black/90 hidden items-center justify-center p-4">
+        <button onclick="closeModal()" class="absolute top-6 right-6 text-white text-3xl hover:text-rose-500 transition-colors">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+        <div class="max-w-4xl w-full bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden shadow-2xl flex flex-col md:flex-row">
+            <div class="md:w-2/3 bg-black flex items-center justify-center p-2">
+                <img id="lightbox-img" src="" alt="放大圖片" class="max-h-[80vh] object-contain">
+            </div>
+            <div class="md:w-1/3 p-6 flex flex-col justify-center">
+                <h3 id="lightbox-title" class="text-2xl font-bold text-white mb-3"></h3>
+                <p id="lightbox-desc" class="text-slate-300 text-sm leading-relaxed mb-6"></p>
+                <button onclick="closeModal()" class="w-full py-2.5 bg-slate-800 hover:bg-slate-700 text-slate-200 text-sm font-semibold rounded-xl transition-all">
+                    關閉預覽
+                </button>
+            </div>
+        </div>
     </div>
-  </section>
 
-  <!-- ================= 4. 精選代表影音專區 (STAR 專案剖析) ================= -->
-  <section id="video-showcase" class="py-24 border-t border-brand-border/40">
-    <div class="max-w-7xl mx-auto px-6">
-      <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-4">
-        <div>
-          <span class="text-xs font-bold uppercase tracking-widest text-brand-gold">VIDEO PORTFOLIO</span>
-          <h2 class="text-3xl md:text-4xl font-bold text-white mt-2">精選動態影音代表作</h2>
-        </div>
-        <p class="text-slate-400 text-sm max-w-md">附上專案角色分工、技術重點與實戰解法，展現獨立作業與團隊協作能力。</p>
-      </div>
+    <!-- JavaScript for Lightbox -->
+    <script>
+        function openModal(imgSrc, title, desc) {
+            const modal = document.getElementById('lightbox');
+            const img = document.getElementById('lightbox-img');
+            const titleEl = document.getElementById('lightbox-title');
+            const descEl = document.getElementById('lightbox-desc');
 
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-        
-        <!-- 影片 1 -->
-        <div class="bg-brand-cardBg rounded-2xl border border-brand-border/60 overflow-hidden hover:border-amber-500/40 transition-all duration-300 flex flex-col justify-between">
-          <div>
-            <div class="aspect-video-container">
-              <iframe src="https://www.youtube.com/embed/78j5Mc5z-Rs" title="品牌形象動態宣傳片" allowfullscreen></iframe>
-            </div>
-            <div class="p-6">
-              <div class="flex flex-wrap items-center gap-2 mb-3">
-                <span class="text-xs px-2.5 py-1 rounded bg-amber-500/10 text-brand-gold font-bold">個人主要職責：全案企劃 / 運鏡攝影 / EDIUS 剪輯</span>
-              </div>
-              <h3 class="text-xl font-bold text-white mb-3">品牌形象動態宣傳片</h3>
-              
-              <!-- 結構化求職資訊 -->
-              <div class="space-y-2 text-xs text-slate-300 bg-slate-900/60 p-4 rounded-xl border border-slate-800">
-                <p><strong class="text-brand-gold">【專案挑戰】</strong>素材拍攝量大且交件期極短，需在 90 秒內抓住受眾注意力並呈現品牌專業感。</p>
-                <p><strong class="text-brand-gold">【技術亮點】</strong>採用 EDIUS 廣播級高效剪輯引擎，利用即時多軌預覽快速梳理素材，精準踩準背景音樂鼓點與轉場，剪輯產能較一般流程提升 40% 以上。</p>
-              </div>
-            </div>
-          </div>
-          <div class="px-6 pb-6 pt-2">
-            <span class="text-xs text-slate-400"><i class="fa-solid fa-check text-emerald-400 mr-1"></i> 已達驗收標準並作為品牌年度官網形象主打素材</span>
-          </div>
-        </div>
+            img.src = imgSrc;
+            titleEl.textContent = title;
+            descEl.textContent = desc;
 
-        <!-- 影片 2 -->
-        <div class="bg-brand-cardBg rounded-2xl border border-brand-border/60 overflow-hidden hover:border-amber-500/40 transition-all duration-300 flex flex-col justify-between">
-          <div>
-            <div class="aspect-video-container">
-              <iframe src="https://www.youtube.com/embed/TE9QP2C0oW0" title="商業行銷企劃實作" allowfullscreen></iframe>
-            </div>
-            <div class="p-6">
-              <div class="flex flex-wrap items-center gap-2 mb-3">
-                <span class="text-xs px-2.5 py-1 rounded bg-amber-500/10 text-brand-gold font-bold">個人主要職責：行銷腳本構思 / 燈光配置 / DaVinci Resolve 調色</span>
-              </div>
-              <h3 class="text-xl font-bold text-white mb-3">商業行銷企劃實作片</h3>
-              
-              <!-- 結構化求職資訊 -->
-              <div class="space-y-2 text-xs text-slate-300 bg-slate-900/60 p-4 rounded-xl border border-slate-800">
-                <p><strong class="text-brand-gold">【專案挑戰】</strong>多場景光源混亂（室內鎢絲燈與戶外日光），需確保全片膚色一致性並形塑高級電影感。</p>
-                <p><strong class="text-brand-gold">【技術亮點】</strong>運用 DaVinci Resolve 進行一級色彩校正與節點隔離，針對臉部膚色分離調控（Skin Tone Indicator 準確落點），打造具備故事張力的高質感風格化調色。</p>
-              </div>
-            </div>
-          </div>
-          <div class="px-6 pb-6 pt-2">
-            <span class="text-xs text-slate-400"><i class="fa-solid fa-check text-emerald-400 mr-1"></i> 成功建立可複用之品牌專屬 Color LUT 調色規範</span>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ================= 5. 平面商業攝影與影像合成專區 (Photo Showcase) ================= -->
-  <section id="photo-showcase" class="py-24 border-t border-brand-border/40 bg-slate-900/30">
-    <div class="max-w-7xl mx-auto px-6">
-      <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-4">
-        <div>
-          <span class="text-xs font-bold uppercase tracking-widest text-brand-gold">PHOTO GALLERY</span>
-          <h2 class="text-3xl md:text-4xl font-bold text-white mt-2">平面商業攝影與影像合成實績</h2>
-        </div>
-        <p class="text-slate-400 text-sm max-w-md">點擊圖片開啟高解析燈箱，檢視實例光影層次、面部毛孔細節與產品材質反光控制實力。</p>
-      </div>
-
-      <!-- 4 欄圖片網格（配置 images 內部的相對路徑圖片） -->
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-        
-        <!-- 相片卡片 1 -->
-        <div class="photo-card group relative rounded-2xl overflow-hidden bg-brand-cardBg border border-brand-border/60 aspect-[3/4] cursor-pointer" 
-             data-img="images/photo-01.jpg" 
-             data-title="高端時尚人像商業攝影" 
-             data-desc="【專業亮點】運用冷暖雙色溫對比布光。暖黃色調的強烈側逆光（輪廓光）完美勾勒模特兒的肢體線條與蓬鬆髮絲；冷色調背景則營造出神秘前衛的時尚張力，展現頂級服飾穿搭的高端氛圍。">
-          <img src="images/photo-01.jpg" alt="高端時尚人像商業攝影作品" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out">
-          <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-80 group-hover:opacity-95 transition-opacity duration-300"></div>
-          
-          <!-- 放大鏡提示圖示 -->
-          <div class="absolute top-4 right-4 w-10 h-10 rounded-full bg-black/60 border border-white/10 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-            <i class="fa-solid fa-magnifying-glass-plus text-brand-gold text-sm"></i>
-          </div>
-          
-          <div class="absolute bottom-0 left-0 p-6">
-            <span class="text-xs font-semibold text-brand-gold tracking-wider uppercase mb-1 block">商業人像 / 雙色溫布光</span>
-            <h4 class="text-base font-bold text-white">高端時尚人像商攝</h4>
-          </div>
-        </div>
-
-        <!-- 相片卡片 2 -->
-        <div class="photo-card group relative rounded-2xl overflow-hidden bg-brand-cardBg border border-brand-border/60 aspect-[3/4] cursor-pointer" 
-             data-img="images/photo-02.jpg" 
-             data-title="精緻高質感棚拍人像肖像" 
-             data-desc="【專業亮點】採用極致溫和的單點大型柔光罩，均勻細緻地描繪模特兒面部的光影漸層。精準掌握眼部眼神光並細緻調控肌膚毛孔紋理，襯托高領紅色衣著與手工質感斑駁背景的故事張力。">
-          <img src="images/photo-02.jpg" alt="精緻高質感棚拍人像肖像作品" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out">
-          <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-80 group-hover:opacity-95 transition-opacity duration-300"></div>
-          
-          <div class="absolute top-4 right-4 w-10 h-10 rounded-full bg-black/60 border border-white/10 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-            <i class="fa-solid fa-magnifying-glass-plus text-brand-gold text-sm"></i>
-          </div>
-          
-          <div class="absolute bottom-0 left-0 p-6">
-            <span class="text-xs font-semibold text-brand-gold tracking-wider uppercase mb-1 block">職人肖像 / 柔光精修</span>
-            <h4 class="text-base font-bold text-white">高質感人像棚拍肖像</h4>
-          </div>
-        </div>
-
-        <!-- 相片卡片 3 -->
-        <div class="photo-card group relative rounded-2xl overflow-hidden bg-brand-cardBg border border-brand-border/60 aspect-[3/4] cursor-pointer" 
-             data-img="images/photo-03.jpg" 
-             data-title="鋼鐵極限運動腕錶商攝特寫" 
-             data-desc="【專業亮點】採用微距商攝手法，展現 G-Shock 腕錶的精鋼外殼與繁複錶盤構造。利用精準打光在金屬髮絲紋理上折射出如夕陽灑落般的夕金色光輝，強化極限運動工具的剛毅魅力。">
-          <img src="images/photo-03.jpg" alt="鋼鐵極限運動腕錶商攝特寫作品" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out">
-          <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-80 group-hover:opacity-95 transition-opacity duration-300"></div>
-          
-          <div class="absolute top-4 right-4 w-10 h-10 rounded-full bg-black/60 border border-white/10 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-            <i class="fa-solid fa-magnifying-glass-plus text-brand-gold text-sm"></i>
-          </div>
-          
-          <div class="absolute bottom-0 left-0 p-6">
-            <span class="text-xs font-semibold text-brand-gold tracking-wider uppercase mb-1 block">商品微距 / 精密控光</span>
-            <h4 class="text-base font-bold text-white">精密科技與腕錶特寫</h4>
-          </div>
-        </div>
-
-        <!-- 相片卡片 4 -->
-        <div class="photo-card group relative rounded-2xl overflow-hidden bg-brand-cardBg border border-brand-border/60 aspect-[3/4] cursor-pointer" 
-             data-img="images/photo-04.jpg" 
-             data-title="VERSACE 奢華品牌香水商品情境照" 
-             data-desc="【專業亮點】極致完美的白背景對稱商攝。運用大型無影棚燈與測光控制完全抑制了香水瓶身與晶瑩瓶蓋的多餘反光；配以高對稱的絳紅色花卉襯托，與下方的澄澈鏡面反射倒影相互呼應，詮釋奢華優雅的頂級感官。">
-          <img src="images/photo-04.jpg" alt="VERSACE 奢華品牌香水商品情境照作品" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out">
-          <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-80 group-hover:opacity-95 transition-opacity duration-300"></div>
-          
-          <div class="absolute top-4 right-4 w-10 h-10 rounded-full bg-black/60 border border-white/10 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-            <i class="fa-solid fa-magnifying-glass-plus text-brand-gold text-sm"></i>
-          </div>
-          
-          <div class="absolute bottom-0 left-0 p-6">
-            <span class="text-xs font-semibold text-brand-gold tracking-wider uppercase mb-1 block">高階精品 / 對稱反射</span>
-            <h4 class="text-base font-bold text-white">奢華香水商品情境商攝</h4>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ================= 6. 求職聯絡與面試邀約 (Hire Me / Contact) ================= -->
-  <footer id="contact" class="py-24 border-t border-brand-border/40 relative overflow-hidden bg-slate-900/60">
-    <!-- 背景裝飾漸層 -->
-    <div class="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-amber-500/5 rounded-full blur-[150px] pointer-events-none"></div>
-
-    <div class="max-w-4xl mx-auto px-6 text-center relative z-10">
-      
-      <span class="text-xs font-bold uppercase tracking-widest text-brand-gold">LET'S WORK TOGETHER</span>
-      <h2 class="text-3xl sm:text-5xl font-extrabold text-white mt-2 mb-6">期望加入具有遠見的行銷與影音團隊</h2>
-      <p class="text-slate-400 text-base sm:text-lg mb-8 max-w-xl mx-auto leading-relaxed">
-        目前正積極尋求全職【數位影音行銷企劃 / 影視剪輯師 / 調色師】職位，亦歡迎專案外包與商業合作洽談。隨時可安排線上面試或到場面談！
-      </p>
-
-      <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
-        <a href="mailto:kevin.chen@example.com?subject=【面試邀約】影音行銷企劃職缺洽談" class="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 rounded-full bg-brand-gold hover:bg-brand-goldHover text-black font-bold transition-all duration-300 shadow-xl shadow-amber-500/20 hover:scale-105">
-          <i class="fa-regular fa-envelope text-lg"></i>
-          <span>發送 Email 面試邀約 (kevin.chen@example.com)</span>
-        </a>
-        <a href="tel:0912345678" class="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-6 py-4 rounded-full bg-slate-800 hover:bg-slate-700 text-white font-semibold border border-brand-border transition-all">
-          <i class="fa-solid fa-phone text-brand-gold"></i>
-          <span>電話聯絡：0912-345-678</span>
-        </a>
-      </div>
-
-      <!-- 社群與專業平台連結 -->
-      <div class="flex items-center justify-center gap-6 mb-12">
-        <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="w-12 h-12 rounded-full bg-brand-cardBg border border-brand-border/60 flex items-center justify-center text-slate-400 hover:text-white hover:border-amber-500/50 transition-all hover:-translate-y-1" aria-label="YouTube 頻道">
-          <i class="fa-brands fa-youtube text-xl"></i>
-        </a>
-        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="w-12 h-12 rounded-full bg-brand-cardBg border border-brand-border/60 flex items-center justify-center text-slate-400 hover:text-white hover:border-amber-500/50 transition-all hover:-translate-y-1" aria-label="LinkedIn 個人檔案">
-          <i class="fa-brands fa-linkedin-in text-xl"></i>
-        </a>
-        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="w-12 h-12 rounded-full bg-brand-cardBg border border-brand-border/60 flex items-center justify-center text-slate-400 hover:text-white hover:border-amber-500/50 transition-all hover:-translate-y-1" aria-label="Instagram 作品牆">
-          <i class="fa-brands fa-instagram text-xl"></i>
-        </a>
-      </div>
-
-      <div class="border-t border-brand-border/40 pt-8 text-xs text-slate-500 flex flex-col sm:flex-row items-center justify-between gap-4">
-        <p>&copy; 2026 Kevin Chen 陳建安. 專屬求職作品集. All Rights Reserved.</p>
-        <p class="text-slate-400">目前居所：台灣新北市 / 台北市 ｜ 可到職時間：即時</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- ================= 7. 燈箱 Modal 元件 (Lightbox) ================= -->
-  <div id="lightbox" class="fixed inset-0 z-[100] hidden flex items-center justify-center bg-black/90 p-4 transition-all duration-300 opacity-0">
-    <button id="lightbox-close" class="absolute top-6 right-6 text-white hover:text-brand-gold text-3xl focus:outline-none z-50 p-2" aria-label="關閉燈箱">
-      <i class="fa-solid fa-xmark"></i>
-    </button>
-    
-    <div class="relative max-w-4xl w-full bg-brand-cardBg rounded-2xl overflow-hidden border border-brand-border shadow-2xl flex flex-col md:flex-row max-h-[90vh] md:max-h-[80vh]">
-      <div class="w-full md:w-2/3 bg-black flex items-center justify-center overflow-hidden">
-        <img id="lightbox-img" src="" alt="燈箱作品展示" class="max-w-full max-h-[50vh] md:max-h-[80vh] object-contain">
-      </div>
-      
-      <div class="w-full md:w-1/3 p-8 flex flex-col justify-center bg-brand-cardBg border-t md:border-t-0 md:border-l border-brand-border/60">
-        <span class="text-xs font-bold text-brand-gold uppercase tracking-wider mb-2">WORKS DETAIL</span>
-        <h3 id="lightbox-title" class="text-xl font-bold text-white mb-4">作品名稱</h3>
-        <p id="lightbox-desc" class="text-slate-400 text-sm leading-relaxed">作品專業規格與技術執行亮點。</p>
-      </div>
-    </div>
-  </div>
-
-  <!-- ================= 8. JavaScript 動態處理 (包含粒子互動 Canvas) ================= -->
-  <script>
-    // ---------------- 手機版選單切換開關 ----------------
-    const menuBtn = document.getElementById('menu-btn');
-    const mobileMenu = document.getElementById('mobile-menu');
-    const mobileLinks = document.querySelectorAll('.mobile-link');
-
-    menuBtn.addEventListener('click', () => {
-      mobileMenu.classList.toggle('hidden');
-    });
-
-    mobileLinks.forEach(link => {
-      link.addEventListener('click', () => {
-        mobileMenu.classList.add('hidden');
-      });
-    });
-
-    // ---------------- Lightbox 燈箱邏輯 ----------------
-    const lightbox = document.getElementById('lightbox');
-    const lightboxImg = document.getElementById('lightbox-img');
-    const lightboxTitle = document.getElementById('lightbox-title');
-    const lightboxDesc = document.getElementById('lightbox-desc');
-    const lightboxClose = document.getElementById('lightbox-close');
-    const photoCards = document.querySelectorAll('.photo-card');
-
-    photoCards.forEach(card => {
-      card.addEventListener('click', () => {
-        const imgSrc = card.getAttribute('data-img');
-        const titleText = card.getAttribute('data-title');
-        const descText = card.getAttribute('data-desc');
-
-        lightboxImg.src = imgSrc;
-        lightboxTitle.innerText = titleText;
-        lightboxDesc.innerText = descText;
-
-        lightbox.classList.remove('hidden');
-        lightbox.classList.add('flex');
-        
-        setTimeout(() => {
-          lightbox.classList.remove('opacity-0');
-          lightbox.classList.add('opacity-100');
-        }, 50);
-      });
-    });
-
-    function closeLightbox() {
-      lightbox.classList.remove('opacity-100');
-      lightbox.classList.add('opacity-0');
-      setTimeout(() => {
-        lightbox.classList.add('hidden');
-        lightbox.classList.remove('flex');
-        lightboxImg.src = "";
-      }, 300);
-    }
-
-    lightboxClose.addEventListener('click', closeLightbox);
-
-    lightbox.addEventListener('click', (e) => {
-      if (e.target === lightbox) {
-        closeLightbox();
-      }
-    });
-
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && !lightbox.classList.contains('hidden')) {
-        closeLightbox();
-      }
-    });
-
-
-    // ---------------- 炫麗微光粒子網絡 (Hero Canvas Constellation) ----------------
-    const canvas = document.getElementById('hero-particle-canvas');
-    const ctx = canvas.getContext('2d');
-
-    let particles = [];
-    const particleCount = 45; // 粒子數量，兼顧流暢度與視覺豐富度
-    let mouse = { x: null, y: null, radius: 120 };
-
-    function resizeCanvas() {
-      canvas.width = canvas.parentElement.offsetWidth;
-      canvas.height = canvas.parentElement.offsetHeight;
-    }
-
-    resizeCanvas();
-    window.addEventListener('resize', resizeCanvas);
-
-    window.addEventListener('mousemove', (e) => {
-      const rect = canvas.getBoundingClientRect();
-      mouse.x = e.clientX - rect.left;
-      mouse.y = e.clientY - rect.top;
-    });
-
-    window.addEventListener('mouseout', () => {
-      mouse.x = null;
-      mouse.y = null;
-    });
-
-    class Particle {
-      constructor() {
-        this.x = Math.random() * canvas.width;
-        this.y = Math.random() * canvas.height;
-        this.size = Math.random() * 2 + 1;
-        this.speedX = (Math.random() - 0.5) * 0.8;
-        this.speedY = (Math.random() - 0.5) * 0.8;
-        // 隨機賦予金色或淺藍色粒子
-        this.color = Math.random() > 0.4 ? 'rgba(245, 158, 11, ' : 'rgba(147, 197, 253, ';
-        this.alpha = Math.random() * 0.6 + 0.2;
-      }
-
-      update() {
-        this.x += this.speedX;
-        this.y += this.speedY;
-
-        if (this.x > canvas.width) this.x = 0;
-        else if (this.x < 0) this.x = canvas.width;
-        if (this.y > canvas.height) this.y = 0;
-        else if (this.y < 0) this.y = canvas.height;
-
-        // 滑鼠靠近互動微動效
-        if (mouse.x !== null && mouse.y !== null) {
-          let dx = mouse.x - this.x;
-          let dy = mouse.y - this.y;
-          let distance = Math.sqrt(dx * dx + dy * dy);
-          if (distance < mouse.radius) {
-            this.x -= dx * 0.03;
-            this.y -= dy * 0.03;
-          }
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            document.body.style.overflow = 'hidden';
         }
-      }
 
-      draw() {
-        ctx.beginPath();
-        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-        ctx.fillStyle = this.color + this.alpha + ')';
-        ctx.shadowBlur = 8;
-        ctx.shadowColor = 'rgba(245, 158, 11, 0.5)';
-        ctx.fill();
-        ctx.shadowBlur = 0; // 重置
-      }
-    }
-
-    for (let i = 0; i < particleCount; i++) {
-      particles.push(new Particle());
-    }
-
-    function animateParticles() {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-      for (let i = 0; i < particles.length; i++) {
-        particles[i].update();
-        particles[i].draw();
-
-        // 粒子間連線效果 (光纖網狀)
-        for (let j = i + 1; j < particles.length; j++) {
-          let dx = particles[i].x - particles[j].x;
-          let dy = particles[i].y - particles[j].y;
-          let dist = Math.sqrt(dx * dx + dy * dy);
-
-          if (dist < 110) {
-            ctx.beginPath();
-            ctx.strokeStyle = `rgba(245, 158, 11, ${0.15 * (1 - dist / 110)})`;
-            ctx.lineWidth = 0.8;
-            ctx.moveTo(particles[i].x, particles[i].y);
-            ctx.lineTo(particles[j].x, particles[j].y);
-            ctx.stroke();
-          }
+        function closeModal() {
+            const modal = document.getElementById('lightbox');
+            modal.classList.remove('flex');
+            modal.classList.add('hidden');
+            document.body.style.overflow = 'auto';
         }
-      }
 
-      requestAnimationFrame(animateParticles);
-    }
-
-    animateParticles();
-  </script>
-
+        // Close modal when clicking outside content
+        document.getElementById('lightbox').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeModal();
+            }
+        });
+    </script>
 </body>
 </html>
